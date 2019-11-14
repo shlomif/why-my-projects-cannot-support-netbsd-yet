@@ -14,24 +14,62 @@ My public-facing projects (open source ones/etc) cannot support https://www.netb
 Introduction
 ------------
 
-This is a sequel to a previous https://github.com/shlomif/what-i-learned-from-porting-to-freebsd[feature] about what I learned from porting my projects to build and pass tests FreeBSD and which received some coverage on reddit and hackernews. In a hackernews comment, someone suggested that "`now you should try openbsd or netbsd, as they are even less tolerant of linux-isms`". As this comment seemed to be of merit, I decided to try porting them to NetBSD which I heard was easier to install at the time than OpenBSD (which may no longer be true).
+This is a sequel to a previous
+https://github.com/shlomif/what-i-learned-from-porting-to-freebsd[feature]
+about what I learned from porting my projects to build and pass tests FreeBSD
+and which received some coverage on reddit and hackernews. In a hackernews
+comment, someone suggested that “now you should try openbsd or netbsd, as they
+are even less tolerant of linux-isms”. As this comment seemed to be of merit, I
+decided to try porting them to NetBSD which I heard was easier to install at
+the time than OpenBSD (which may no longer be true).
 
-Note that I don't expect this sequel to be as popular as the original, and I'm not writing it for achieving worldwide fame and fortune, just as an update on my progress.
+Note that I don't expect this sequel to be as popular as the original, and I'm
+not writing it for achieving worldwide fame and fortune, just as an update on
+my progress.
 
 [id="what_worked"]
 What worked
 -----------
 
-NetBSD was fairly easy to install for me on a VirtualBox VM, as easy as FreeBSD and much easier than the https://shlomif-tech.livejournal.com/64318.html[user-hostile installer of Arch linux] (which to its defence was replaced by an easy to use graphical installer in https://manjaro.org/[Manjaro] and possibly some other Arch derivatives). Setting up pkgsrc was fairly straightforward as well (but could have been made somewhat easier by adding some preinstalled scripts). NetBSD seemed fast enough or even very fast, and it was easy to build many of my projects dependencies.
+NetBSD was fairly easy to install for me on a VirtualBox VM, as easy as FreeBSD
+and much easier than the
+https://shlomif-tech.livejournal.com/64318.html[user-hostile installer of Arch
+linux] (which to its defence was replaced by an easy to use graphical installer
+in https://manjaro.org/[Manjaro] and possibly some other Arch derivatives).
+Setting up pkgsrc was fairly straightforward as well (but could have been made
+somewhat easier by adding some preinstalled scripts). NetBSD seemed fast enough
+or even very fast, and it was easy to build many of my projects dependencies.
 
-Note that I used a graphical web browser on the host mageia linux system, to look up some commands and idioms out of convenience, but everything may be documented inside the guest VM's bundled documentation - I didn't check.
+Note that I used a graphical web browser on the host mageia linux system, to
+look up some commands and idioms out of convenience, but everything may be
+documented inside the guest VM's bundled documentation - I didn't check.
 
 [id="the_obstacle"]
 The Obstacle:
 -------------
 
-I was unable to proceed because I discovered that https://en.wikipedia.org/wiki/DocBook[DocBook/XML] was still stuck at version 4.5 in pkgsrc (see http://pkgsrc.se/textproc/docbook-xml ) despite the fact that DocBook 5.0 https://docbook.org/schemas/5x.html[was released in 2008] (over 10 years ago) and that it was already available in FreeBSD and many Linux distributions, including some that are likely even less popular than NetBSD (including https://www.mageia.org/en/[Mageia] which I happen to use on some systems and which I contribute to).
+I was unable to proceed because I discovered that
+https://en.wikipedia.org/wiki/DocBook[DocBook/XML] was still stuck at version
+4.5 in pkgsrc (see http://pkgsrc.se/textproc/docbook-xml ) despite the fact
+that DocBook 5.0 https://docbook.org/schemas/5x.html[was released in 2008]
+(over 10 years ago) and that it was already available in FreeBSD and many Linux
+distributions, including some that are likely even less popular than NetBSD
+(including https://www.mageia.org/en/[Mageia] which I happen to use on some
+systems and which I contribute to).
 
-Since I lack the knowledge and interest to prepare a DocBook/XML 5.x port for pkgsrc/NetBSD and it seemed like general negligence or apathy towards it, and projects that make use of it, I decided that I won't officially support building my projects there. It may work or it may not, but you'll need to install DocBook 5.x or contribute a package to pkgsrc yourself. Patches and pull requests that improve portability to NetBSD, OpenBSD, or other non-EOLed Unix-like OSes or non-EOLed MS Windows versions, will be welcome and reviewed and hopefully merged. You can still ask me for help, but I may say that I do not support pkgsrc-based OSes, and ask you to either use a different OS (possibly inside a VM), give up, or do the work yourself.
+Since I lack the knowledge and interest to prepare a DocBook/XML 5.x port for
+pkgsrc/NetBSD and it seemed like general negligence or apathy towards it, and
+projects that make use of it, I decided that I won't officially support
+building my projects there. It may work or it may not, but you'll need to
+install DocBook 5.x or contribute a package to pkgsrc yourself. Patches and
+pull requests that improve portability to NetBSD, OpenBSD, or other non-EOLed
+Unix-like OSes or non-EOLed MS Windows versions, will be welcome and reviewed
+and hopefully merged. You can still ask me for help, but I may say that I do
+not support pkgsrc-based OSes, and ask you to either use a different OS
+(possibly inside a VM), give up, or do the work yourself.
 
-I believe that supporting DocBook/XML 5.0 is important enough for many other FOSS projects that use it, that upgrading to it should be a priority for pkgsrc, and I am surprised that it fell between the chairs for so long. I was told that FreeBSD has more manpower than NetBSD, although it may have other organisational issues - a fact which may explain the issue.
+I believe that supporting DocBook/XML 5.0 is important enough for many other
+FOSS projects that use it, that upgrading to it should be a priority for
+pkgsrc, and I am surprised that it fell between the chairs for so long. I was
+told that FreeBSD has more manpower than NetBSD, although it may have other
+organisational issues - a fact which may explain the issue.
