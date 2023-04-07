@@ -73,3 +73,13 @@ FOSS projects that use it, that upgrading to it should be a priority for
 pkgsrc, and I am surprised that it fell between the chairs for so long. I was
 told that FreeBSD has more manpower than NetBSD, although it may have other
 organisational issues - a fact which may explain the issue.
+
+[id="continuations"]
+Continuations / sequels / updates:
+----------------------------------
+
+* https://github.com/shlomif/what-i-learned-from-porting-to-freebsd["What I learned from porting my projects to FreeBSD"]
+
+* https://github.com/shlomif/why-my-projects-cannot-support-netbsd-yet["Why my projects cannot support NetBSD (yet)"]
+
+* https://github.com/shlomif/why-the-BSDs-should-not-blame-USL-vs-BSDi-for-linux-dominance["Why the BSDs should not blame the USL vs BSDi lawsuits for Linux’s dominance"]
