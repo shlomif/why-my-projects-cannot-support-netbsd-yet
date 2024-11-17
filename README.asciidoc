@@ -8,7 +8,7 @@ Shlomi Fish <shlomif@cpan.org>
 TL;DR Summary
 -------------
 
-My public-facing projects (open source ones/etc) cannot support https://www.netbsd.org/[NetBSD] yet, despite being capable of being built and tested on many Linux distributions, FreeBSD, and often also Microsoft Windows, due to the lack of version 5 of DocBook/XML in http://www.pkgsrc.org/[pkgsrc].
+My public-facing projects (open source ones/etc) cannot support https://www.netbsd.org/[NetBSD] yet, despite being capable of being built and tested on many Linux distributions, on FreeBSD, and often also on Microsoft Windows, due to the lack of version 5 of DocBook/XML in http://www.pkgsrc.org/[pkgsrc].
 
 [id="intro"]
 Introduction
@@ -16,12 +16,12 @@ Introduction
 
 This is a sequel to a previous
 https://github.com/shlomif/what-i-learned-from-porting-to-freebsd[feature]
-about what I learned from porting my projects to build and pass tests FreeBSD
-and which received some coverage on reddit and hackernews. In a hackernews
-comment, someone suggested that “now you should try openbsd or netbsd, as they
-are even less tolerant of linux-isms”. As this comment seemed to be of merit, I
-decided to try porting them to NetBSD which I heard was easier to install at
-the time than OpenBSD (which may no longer be true).
+about what I learned from porting my projects to build and pass tests on
+FreeBSD and which received some coverage on reddit and hackernews. In a
+hackernews comment, someone suggested that “now you should try openbsd or
+netbsd, as they are even less tolerant of linux-isms”. As this comment seemed
+to be of merit, I decided to try porting them to NetBSD which I heard was
+easier to install at the time than OpenBSD (which may no longer be true).
 
 Note that I don't expect this sequel to be as popular as the original, and I'm
 not writing it for achieving worldwide fame and fortune, just as an update on
@@ -31,12 +31,12 @@ my progress.
 What worked
 -----------
 
-NetBSD was fairly easy to install for me on a VirtualBox VM, as easy as FreeBSD
-and much easier than the
+NetBSD was fairly easy to install for me on a VirtualBox VM. In fact, it was as
+easy to install as FreeBSD, and much easier than the
 https://shlomif-tech.livejournal.com/64318.html[user-hostile installer of Arch
 linux] (which to its defence was replaced by an easy to use graphical installer
 in https://manjaro.org/[Manjaro] and possibly some other Arch derivatives).
-Setting up pkgsrc was fairly straightforward as well (but could have been made
+Setting up pkgsrc was fairly straightforward, as well (but could have been made
 somewhat easier by adding some preinstalled scripts). NetBSD seemed fast enough
 or even very fast, and it was easy to build many of my projects dependencies.
 
@@ -53,8 +53,8 @@ https://en.wikipedia.org/wiki/DocBook[DocBook/XML] was still stuck at version
 4.5 in pkgsrc (see http://pkgsrc.se/textproc/docbook-xml ) despite the fact
 that DocBook 5.0 https://docbook.org/schemas/5x.html[was released in 2008]
 (over 10 years ago) and that it was already available in FreeBSD and many Linux
-distributions, including some that are likely even less popular than NetBSD
-(including https://www.mageia.org/en/[Mageia] which I happen to use on some
+distributions. These include some that are likely even less popular than NetBSD
+(such as https://www.mageia.org/en/[Mageia] which I happen to use on some
 systems and which I contribute to).
 
 Since I lack the knowledge and interest to prepare a DocBook/XML 5.x port for
